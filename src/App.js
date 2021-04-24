@@ -27,8 +27,8 @@ const App = () => {
   }), []);
 
   const fetchWeather = ({city, latitude, longitude}) => {
-    let API_URL = city ? `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}` 
-                       : `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`;
+    let API_URL = city ? `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}` 
+                       : `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`;
     fetch(API_URL)
     .then(response => response.json())
     .then(data => {
