@@ -1,5 +1,4 @@
 import React, {useState, useEffect, useRef} from 'react';
-import API_KEY from './const/ApiKey';
 import Form from './Components/Form';
 import ButtonEditCity from './Elements/ButtonEditCity'
 import CityName from './Elements/CityName'
@@ -14,7 +13,11 @@ import Mountain from './Components/Mountain'
 import mountains from './const/ImgMountains'
 import ShowMore from './Elements/ShowMore.jsx'
 
+const API_KEY=process.env.REACT_APP_WEATHER_API_KEY;
+
 const App = () => {
+
+  
 
   const [weather, setWeather] = useState(InitialWeather);
   const [city, setCity] = useState('');
@@ -65,6 +68,7 @@ const App = () => {
 
       // update the state
       setWeather(newWeather);
+      console.log(newWeather);
     })
     .catch(error=>console.log(error));
   }

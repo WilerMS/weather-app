@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {AnimationIn} from './../Elements/Animations'
 
 
 const Mountain = ({weather, mountain}) => {
@@ -15,6 +16,8 @@ const Container = styled.img`
     bottom: 0;
     z-index: -2;
     opacity: .7;
+    transition: .5s all ease;
+    animation: ${AnimationIn} .5s ease;
 `;
 
 export default Mountain;
