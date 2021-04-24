@@ -35,8 +35,8 @@ const CityName = ({name, country}) => {
                 <i className="fas fa-map-marker-alt"></i>
             </Icon>
             <H1>{`
-                    ${name !== undefined ? name : ''}
-                    ${country !== undefined ? ', ' + country : ''}
+                    ${name !== null ? name : ''}
+                    ${country !== null ? ', ' + country : ''}
             `}</H1>
         </>
     )
