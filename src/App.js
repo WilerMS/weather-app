@@ -25,9 +25,14 @@ const App = () => {
 
   const mountain = useRef(mountains[Math.floor(Math.random() * 9)]);
 
-  useEffect(()=>fetchWeather({
-    latitude: location.latitude, longitude: location.longitude
-  }), []);
+  useEffect(()=>{
+    if (localStorage.getItem('lastCity')) {
+      let lastCity = localStorage.getItem('lastCity');
+      fetchWeather({city: lastCity})
+    } else {
+      fetchWeather({latitude: location.latitude, longitude: location.longitude})
+    }
+  }, []);
 
   const fetchWeather = ({city, latitude, longitude}) => {
     let API_URL = city ? `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}` 
@@ -68,7 +73,9 @@ const App = () => {
 
       // update the state
       setWeather(newWeather);
-      console.log(newWeather);
+
+
+      localStorage.setItem('lastCity', `${newWeather.name}, ${newWeather.country}`);
     })
     .catch(error=>console.log(error));
   }
