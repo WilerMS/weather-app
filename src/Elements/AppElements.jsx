@@ -16,7 +16,7 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
     
-  background: linear-gradient(to bottom, ${(props) => props.now === 'day' ? 
+  background: linear-gradient(to bottom, ${(props) => props.now ? 
     `${bgColors.dayPrimary}, ${bgColors.daySecundary} ` 
   : `${bgColors.nightPrimary}, ${bgColors.nightSecundary}`
   });

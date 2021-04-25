@@ -1,38 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import {DayIcons, NightIcons} from '../const/Icons'
+import {setIcon} from '../const/Icons'
 
 const WeatherInfo = ({weather}) => {
-
-    const setIcon = (icons) => {
-        if (weather.main === 'Clear') {
-            return icons[1];
-        } else if (weather.main === 'Clouds') {
-            return icons[0];
-        }else if (weather.main === 'Rain') {
-            return icons[2];
-        } else if (weather.main === 'Snow') {
-            return icons[3];
-        } else if (weather.main === 'Mist' || weather.main==='Fog') {
-            return icons[4];
-        }
-    }
-    const image = (weather.now === 'night') ? setIcon(NightIcons) : setIcon(DayIcons);
+    
+    const image = setIcon(weather.now, weather.main);
 
     return (
         <Container>
             <img src={image} alt=""/>
             <div className="content__info">
-                <h1>{weather.temp !== null ? Math.round(weather.temp) + 'º' : ''}</h1>
-                <p>
-                    {/*`
-                        ${weather.tempMin !== null ? 'Min: ' +Math.round(weather.tempMin) + ', ' : '' } 
-                        ${weather.tempMax !== null ? 'Max: ' + Math.round(weather.tempMax) + ', ' : ''}
-                        ${weather.main !== null ? weather.main : ''}
-    `*/ 
-                        `${weather.description !== null ? 'Description: ' + weather.description : ''}`
-                    }
-                </p>
+                <h1>{weather.temp ? Math.round(weather.temp) + 'º' : ''}</h1>
+                <p>{`${weather.description ? 'Description: ' + weather.description : ''}`}</p>
             </div>
         </Container>
     )

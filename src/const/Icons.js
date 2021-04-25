@@ -17,11 +17,26 @@ import humidity from './../Icons/022-humidity.svg'
 import minTemp from './../Icons/024-temperature.svg'
 import maxTemp from './../Icons/025-temperature.svg'
 
-const DayIcons = [cloudyDay, clearDay, RainDay, SnowDay, MistDay, humidity];
-const NightIcons = [cloudyNight, clearNight, RainNight, SnowNight, MistNight, humidity];
-const AfterIcons = [cloudyDay, clearDay, RainDay, SnowDay, MistDay, humidity];
+import conditions from './../const/conditionsCodes'
+
+const DayIcons = [cloudyDay, clearDay, RainDay, SnowDay, MistDay];
+const NightIcons = [cloudyNight, clearNight, RainNight, SnowNight, MistNight];
 const MoreIcons = [humidity, minTemp, maxTemp];
 
+const setIcon = (now, main) => {
+    if (conditions.clear.includes(main)){
+        return (now) ? DayIcons[1] : NightIcons[1];
+    } else if (conditions.clouds.includes(main)) {
+        return (now) ? DayIcons[0] : NightIcons[0];
+    } else if (conditions.rain.includes(main)) {
+        return (now) ? DayIcons[2] : NightIcons[2];
+    } else if (conditions.snow.includes(main)) {
+        return (now) ? DayIcons[3] : NightIcons[3];
+    } else if (conditions.fog.includes(main)) {
+        return (now) ? DayIcons[4] : NightIcons[4];
+    }
+}
 
-export {DayIcons, NightIcons, AfterIcons, MoreIcons};
+
+export {setIcon, MoreIcons};
 

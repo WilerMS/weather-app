@@ -1,20 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 import Particles from 'react-particles-js';
+import conditions from './../const/conditionsCodes'
 import {ParticlesSnow, ParticlesNight, ParticlesSun, ParticlesCloud, ParticlesRain} from './../config/dataParticles'
 
  const Particle = ({now, main}) => {
-
+     
     let params = ParticlesCloud;
-    if (main === 'Clear') {
-        params =  (now==='day') ? ParticlesSun : ParticlesNight;
-    } else if (main === 'Clouds') {
+    if (conditions.clear.includes(main)) {
+        params =  (now) ? ParticlesSun : ParticlesNight;
+    } else if (conditions.clouds.includes(main)) {
         params = ParticlesCloud;
-    }else if (main === 'Rain') {
+    }else if (conditions.rain.includes(main)) {
         params = ParticlesRain;
-    } else if (main === 'Snow') {
+    } else if (conditions.snow.includes(main)) {
         params = ParticlesSnow;
-    } else if (main === 'Mist' || main==='Fog') {
+    } else if (conditions.fog.includes(main)) {
         params = ParticlesNight;
     }
     
