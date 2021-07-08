@@ -1,18 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import {AnimationIn} from './../Elements/Animations'
 
+const Form = ({enableFormCity, setEnableFormCity, fetchWeather}) => {
 
-
-const Form = ({city, setCity, setEnableFormCity, enableFormCity, fetchWeather}) => {
+    const [city, setCity] = useState('');
 
     const handleChange = e => {
         setCity(e.target.value);
     }
     const handleSubmit = e => {
-    e.preventDefault();
-    setEnableFormCity(!enableFormCity);
-    city !== "" && fetchWeather({city:city});
+        e.preventDefault();
+        setEnableFormCity(!enableFormCity);
+        city !== "" && fetchWeather({city:city.toLowerCase()});
+        setCity("");
     }
 
     return(

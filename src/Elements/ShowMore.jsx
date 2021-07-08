@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const ShowMore = () => {
     return (
         <Container>
-            <i className="fas fa-angle-down"></i>
+            <i className="fas fa-angle-up"></i>
         </Container>
     )
 }

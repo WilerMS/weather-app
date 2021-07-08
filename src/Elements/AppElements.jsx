@@ -8,8 +8,6 @@ const bgColors = {
   nightSecundary: '#041f25'
 }
 
-
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -33,16 +31,6 @@ const Container = styled.div`
     box-shadow: 0px 0px 10px 0px #00000040;
     border: 1px solid #008b9a;
     border-radius: 35px;
-  }
-
-  .header {
-    color: white;
-    height: 75px;
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    text-shadow: 0px 0px 5px #0000008c;
   }
 `;
 
