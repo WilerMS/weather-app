@@ -31,7 +31,7 @@ import {ParticlesSnow, ParticlesNight, ParticlesSun, ParticlesCloud, ParticlesRa
 
 const ContainerParticles = styled.div`
     top: 0;
-    width: 200%;
+    width: 280%;
     position: absolute;
     overflow: hidden;
     z-index: -1;
