@@ -12,7 +12,7 @@ const Form = ({enableFormCity, setEnableFormCity, fetchWeather}) => {
     const handleSubmit = e => {
         e.preventDefault();
         setEnableFormCity(!enableFormCity);
-        city !== "" && fetchWeather({city:city.toLowerCase()});
+        city !== "" && fetchWeather(city.toLowerCase());
         setCity("");
     }
 

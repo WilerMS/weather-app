@@ -14,8 +14,8 @@ const Container = styled.img`
     height: 60%;
     right: -50%;
     bottom: 0;
-    z-index: -2;
-    opacity: .7;
+    z-index: 0;
+    opacity: 1;
     transition: .5s all ease;
     animation: ${AnimationIn} .5s ease;
 `;
