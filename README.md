@@ -1,9 +1,8 @@
 <h1 align="center">More Weather</h1>
 <p align="center">How this web application looks like</p>
-<p align="center">![image](https://user-images.githubusercontent.com/70902862/194829602-13348b94-01d9-467d-b327-cdc46fa835d4.png)
-
+<p align="center">
   <img src="https://user-images.githubusercontent.com/70902862/194829602-13348b94-01d9-467d-b327-cdc46fa835d4.png"/>
-
+  <img src="https://user-images.githubusercontent.com/70902862/194830130-5fd2eb87-c395-451a-ab7a-b2e2f6c9b7ec.png"/>
 </p> 
 
 ## Tabla de contenidos:
