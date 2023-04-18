@@ -15,7 +15,7 @@ You, like the user who is using this application, just have to writte the name o
 - The current weather in that location
 - The humidity
 - The current temperature
-- Min and max temperature
+- Min and max temperature. 
  	
 ## Installation guide
 ---
